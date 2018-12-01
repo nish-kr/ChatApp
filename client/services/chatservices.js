@@ -24,7 +24,9 @@ app.service('chatService', function($location) {
     //     $scope.message = "";
     // }
 
-    // return socketFactory({
-    //     ioSocket: io.connect('http://localhost:3003')
-    // })
+
+    var ioSocket = io.connect('http://localhost:3003');
+
+    ioSocket.emit('chat message', "Message sent from client");
+
 });
