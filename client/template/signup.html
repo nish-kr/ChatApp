@@ -1,0 +1,41 @@
+<div class="wrap">
+    <h2>Sign Up Here</h2>
+    <form name="frm">
+        <!-- <link rel="stylesheet" href="../css/firstDesign.css"> -->
+        <div>
+            <input type="text" name="fname" placeholder="First Name.." ng-model="firstName" ng-pattern="/[a-zA-Z]$/" required autocomplete="off">
+            <span ng-show="frm.fname.$dirty && frm.fname.$error.required">First Name required!</span>
+            <span ng-show="frm.fname.$error.pattern">Can't contain a number!</span>
+        </div>
+        <div>
+            <input type="text" name="lname" placeholder="Last Name.." ng-model="lastName" ng-pattern="/[a-zA-Z]$/" required autocomplete="off">
+            <span ng-show="frm.lname.$dirty && frm.lname.$error.required">Last Name required!</span>
+            <span ng-show="frm.lname.$error.pattern">Can't contain a number!</span>
+        </div>
+        <div>
+            <input type="email" name="email" placeholder="Email.." ng-model="email" required autocomplete="off">
+            <span ng-show="frm.email.$dirty && frm.email.$error.required">Email required!</span>
+            <span ng-show="frm.email.$dirty && frm.email.$error.email">Invalid Email!</span>
+        </div>
+        <div>
+            <input type="text" name="uname" placeholder="Username.." ng-model="username" ng-pattern="/[a-zA-Z0-9_]$/" required autocomplete="off">
+            <span ng-show="frm.uname.$dirty && frm.uname.$error.required">Username required!</span>
+            <span ng-show="frm.uname.$error.pattern">Can't contain any symbol except "_"</span>
+        </div>
+        <div>
+            <input type="password" name="pwd" id="pass" placeholder="Password.." ng-model="password" required ng-minlength="6" ng-change="checkStrength(password)" />
+            <div class="strength" ng-show="frm.pwd.$dirty" ng-model="strength">{{strength}}
+                <span ng-show="frm.pwd.$dirty && frm.pwd.$error.required">Password required!</span>
+                <span ng-show="frm.pwd.$dirty && frm.pwd.$error.minlength">Too Short!</span>
+            </div>
+        </div>
+        <p>
+            <p></p>
+            <input type="checkbox" id="check" ng-click="showPass()">Show Password
+        </p>
+        <input ng-disabled="frm.$invalid" type="submit" value="Submit" ng-click="register()">
+        <div>
+            <a id=" login " href="#/login">Already have an account? Login here.</a>
+        </div>
+    </form>
+</div>

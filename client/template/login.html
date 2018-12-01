@@ -1,0 +1,22 @@
+<div class="wrap">
+    <h2>Login</h2>
+    <form name="frm">
+        <!-- <link rel="stylesheet" href="../css/firstDesign.css"> -->
+        <div>
+            <p>Username</p>
+            <input type="text" name="uname" placeholder="Enter Username" ng-model="username" required autocomplete="off">
+            <span ng-show="frm.uname.$dirty && frm.uname.$error.required">Username required!</span>
+        </div>
+
+        <p>Password</p>
+        <input type="password" id="pass" placeholder="Enter Password" ng-model="password" required>
+        <div>
+            <input type="checkbox" id="check" ng-click="showPass()">Show Password
+        </div>
+        <div>
+            <input ng-disabled="frm.$invalid" type="submit" value="Login" ng-click="login()">
+        </div>
+
+        <a id="signup" href="#/signup">Don't have an account? Sign-up here.</a>
+    </form>
+</div>

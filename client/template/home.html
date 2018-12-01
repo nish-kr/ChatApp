@@ -1,0 +1,15 @@
+<div class="home" autocomplete="off">
+
+    <div ng-model="dispUn">Welcome to ChatApp, {{dispUn}}!
+        <input id="logoutButton" type="button" value="Logout" ng-click="logout()">
+    </div>
+    <div id="chatbox">
+        <div id="message" ng-repeat="chat in chats">
+            {{chat.un}}: {{chat.message}}, ({{chat.time}})
+        </div>
+    </div>
+    <form name="chat">
+        <input name="usermsg" type="text" id="usermsg" ng-model="usermessage" required autocomplete="off" />
+        <input name="submitmsg" type="submit" id="sendButton" value="Send" ng-click="send()" ng-disbled="chat.$invalid" />
+    </form>
+</div>
